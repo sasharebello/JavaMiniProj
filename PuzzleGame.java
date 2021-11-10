@@ -14,7 +14,7 @@ public class PuzzleGame{
         mb.add(m2);
         f.add(mb);
         f.getContentPane().add(BorderLayout.NORTH,mb);
-        Button b1,b2,b3,b4,b5,b6,b7,b8,b9,bcheat;
+        Button b1,b2,b3,b4,b5,b6,b7,b8,b9,bcheat,bcheat2;
         b1=new Button("1");
         b1.setBounds(50,100,40,40);
         b2=new Button("2");
@@ -35,11 +35,13 @@ public class PuzzleGame{
         b9.setBounds(150,200,40,40);
         bcheat=new Button("");
         bcheat.setBounds(150,200,40,40);
-
         JPanel p= new JPanel();
         JButton bstr= new JButton("Start");
+        bstr.setBounds(40, 300, 70, 25);
         JButton bres= new JButton("Reset");
-
+        bres.setBounds(130, 300 ,70, 25);
+        bcheat2=new Button("");
+        bcheat2.setBounds(150,200,40,40);
         f.add(b1);
         f.add(b2);
         f.add(b3);
@@ -50,11 +52,14 @@ public class PuzzleGame{
         f.add(b8);
         f.add(b9);
         f.add(bcheat);
-        p.add(bstr);
-        p.add(bres);
+        f.add(bstr);
+        f.add(bres);
+        f.add(bcheat2);
         f.getContentPane().add(BorderLayout.SOUTH,p);
         bcheat.setVisible(false);
         bcheat.setEnabled(false);
+        bcheat2.setVisible(false);
+        bcheat2.setEnabled(false);
         f.setVisible(true);
     }
     
