@@ -3,8 +3,8 @@ import java.awt.*;
 
 public class PuzzleGame{
     PuzzleGame(){
-        JFrame f= new JFrame("Number Puzzle Game");
-        f.setSize(400,400);
+        JFrame f= new JFrame("Puzzle Game");
+        f.setSize(255,400);
         f.setBackground(Color.WHITE);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JMenuBar mb= new JMenuBar();
