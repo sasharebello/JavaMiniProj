@@ -1,13 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+
 public class PuzzleGame extends Frame implements ActionListener{
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
-    private JTextField textField;
-    private JMenuBar menuBar;
+    //private JTextField textField;
+    private JTextArea ta;
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,bcheat,bcheat2;
+    Menu m1,m2;
     PuzzleGame(){
         frame= new JFrame("Puzzle Game");
         frame.setSize(255,400);
@@ -15,13 +17,15 @@ public class PuzzleGame extends Frame implements ActionListener{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel=new JPanel();
         panel.setBackground(Color.WHITE);
-        menuBar= new JMenuBar();
+        JMenuBar mb= new JMenuBar();
         JMenu m1= new JMenu("Home");
+        m1.addActionListener(this);
         JMenu m2= new JMenu("Rules");
-        menuBar.add(m1);
-        menuBar.add(m2);
-        frame.add(menuBar);
-        frame.getContentPane().add(BorderLayout.NORTH,menuBar);
+        m2.addActionListener(this);
+        mb.add(m1);
+        mb.add(m2);
+        frame.add(mb);
+        frame.getContentPane().add(BorderLayout.NORTH,mb);
         
         b1=new Button("1");
         b1.setBounds(50,100,40,40);
@@ -80,26 +84,22 @@ public class PuzzleGame extends Frame implements ActionListener{
         bcheat2.setEnabled(false);
  
         frame.setVisible(true);
-    }
-public void LevelChoice() {
-        Frame f = new Frame("Program for exp 14");    
-        Choice c = new Choice();   
-  
-        c.setBounds(100, 100, 75, 75);    
-        c.add("Tea");    
-        c.add("Coffee");    
-        c.add("Juice");    
-        c.add("Cola");    
-        c.add("Water");    
-
-        f.add(c);    
-
-        f.setSize(400, 400);    
-        f.setLayout(null);    
-        f.setVisible(true); 
-}
+    } 
 
 public void actionPerformed(ActionEvent e){  
+    if(e.getSource()==m1){
+        Home();
+    }
+    if(e.getSource()==m1){
+        Rules();
+    }
+    if(e.getSource()==m1){
+        Start();
+    }
+    if(e.getSource()==m1){
+        Reset();
+    }
+
     if(e.getSource()==b1){  
         String label=b1.getLabel();  
         if(b2.getLabel().equals("")){  
@@ -231,6 +231,22 @@ public void actionPerformed(ActionEvent e){
             JOptionPane.showMessageDialog(this,"Congratulations! You won.");    
         }    
 }  
+private void Start() {
+
+}
+
+private void Reset() {
+}
+
+private void Rules() {
+    frame=new JFrame();
+    label= new JLabel("hi");
+
+}
+
+private void Home() {
+}
+
 public static void main(String args[]){
         new PuzzleGame();
     }
