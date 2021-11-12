@@ -13,13 +13,21 @@ public class PuzzleGame extends Frame implements ActionListener{
     PuzzleGame(){
         frame= new JFrame("Puzzle Game");
         frame.setSize(255,400);
-        frame.setBackground(Color.WHITE);
+        frame.setBackground(Color.black);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel=new JPanel();
-        panel.setBackground(Color.WHITE);
+        panel.setBackground(Color.black);
         JMenuBar mb= new JMenuBar();
-        JMenu m1= new JMenu("Home");
+        JMenu m1= new JMenu("Level");
         m1.addActionListener(this);
+        JMenuItem m11= new JMenu("3");
+        JMenuItem m12= new JMenu("4");
+        JMenuItem m13= new JMenu("5");
+        JMenuItem m14= new JMenu("6");
+        m1.add(m11);
+        m1.add(m12);
+        m1.add(m13);
+        m1.add(m14);
         JMenu m2= new JMenu("Rules");
         m2.addActionListener(this);
         mb.add(m1);
@@ -45,14 +53,14 @@ public class PuzzleGame extends Frame implements ActionListener{
         b8.setBounds(100,200,40,40);
         b9=new Button("");
         b9.setBounds(150,200,40,40);
-        bcheat=new Button("");
-        bcheat.setBounds(150,200,40,40);
+        // bcheat=new Button("");
+        // bcheat.setBounds(150,200,40,40);
         JButton bstr= new JButton("Start");
         bstr.setBounds(40, 300, 70, 25);
         JButton bres= new JButton("Reset");
         bres.setBounds(130, 300 ,70, 25);
-        bcheat2=new Button("");
-        bcheat2.setBounds(150,200,40,40);
+        // bcheat2=new Button("");
+        // bcheat2.setBounds(150,200,40,40);
 
         b1.addActionListener(this);  
         b2.addActionListener(this);  
@@ -73,15 +81,15 @@ public class PuzzleGame extends Frame implements ActionListener{
         frame.add(b7);
         frame.add(b8);
         frame.add(b9);
-        frame.add(bcheat);
+        // frame.add(bcheat);
         frame.add(bstr);
         frame.add(bres);
-        frame.add(bcheat2);
+        // frame.add(bcheat2);
         frame.getContentPane().add(BorderLayout.CENTER,panel);
-        bcheat.setVisible(false);
-        bcheat.setEnabled(false);
-        bcheat2.setVisible(false);
-        bcheat2.setEnabled(false);
+        // bcheat.setVisible(false);
+        // bcheat.setEnabled(false);
+        // bcheat2.setVisible(false);
+        // bcheat2.setEnabled(false);
  
         frame.setVisible(true);
     } 
@@ -251,5 +259,4 @@ public static void main(String args[]){
         new PuzzleGame();
     }
 }
-
 
