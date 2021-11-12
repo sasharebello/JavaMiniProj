@@ -24,8 +24,9 @@ public class Rules implements ActionListener{
     }
     public void actionPerformed(ActionEvent e){  
         if(e.getSource()==m1){
-            Home();
+            Home = new Home();
         }
+    }
     public static void main(String args[]){
         new Rules();
     }

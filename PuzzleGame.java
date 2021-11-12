@@ -5,10 +5,10 @@ import java.awt.event.*;
 public class PuzzleGame extends Frame implements ActionListener{
     private JFrame frame;
     private JPanel panel;
-    private JLabel label;
+    //private JLabel label;
     //private JTextField textField;
-    private JTextArea ta;
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,bcheat,bcheat2;
+    //private JTextArea ta;
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9;//bcheat,bcheat2;
     Menu m1,m2;
     PuzzleGame(){
         frame= new JFrame("Puzzle Game");
@@ -17,7 +17,7 @@ public class PuzzleGame extends Frame implements ActionListener{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel=new JPanel();
         panel.setBackground(Color.WHITE);
-        JMenuBar mb= new JMenuBar();
+        /*JMenuBar mb= new JMenuBar();
         JMenu m1= new JMenu("Home");
         m1.addActionListener(this);
         JMenu m2= new JMenu("Rules");
@@ -25,7 +25,7 @@ public class PuzzleGame extends Frame implements ActionListener{
         mb.add(m1);
         mb.add(m2);
         frame.add(mb);
-        frame.getContentPane().add(BorderLayout.NORTH,mb);
+        frame.getContentPane().add(BorderLayout.NORTH,mb);*/
         
         b1=new Button("1");
         b1.setBounds(50,100,40,40);
@@ -45,14 +45,14 @@ public class PuzzleGame extends Frame implements ActionListener{
         b8.setBounds(100,200,40,40);
         b9=new Button("");
         b9.setBounds(150,200,40,40);
-        bcheat=new Button("");
-        bcheat.setBounds(150,200,40,40);
+        //bcheat=new Button("");
+        //bcheat.setBounds(150,200,40,40);
         JButton bstr= new JButton("Start");
-        bstr.setBounds(40, 300, 70, 25);
-        JButton bres= new JButton("Reset");
-        bres.setBounds(130, 300 ,70, 25);
-        bcheat2=new Button("");
-        bcheat2.setBounds(150,200,40,40);
+        bstr.setBounds(80, 280, 70, 25);
+        //JButton bres= new JButton("Reset");
+        //bres.setBounds(130, 300 ,70, 25);
+        //bcheat2=new Button("");
+        //bcheat2.setBounds(150,200,40,40);
 
         b1.addActionListener(this);  
         b2.addActionListener(this);  
@@ -73,31 +73,32 @@ public class PuzzleGame extends Frame implements ActionListener{
         frame.add(b7);
         frame.add(b8);
         frame.add(b9);
-        frame.add(bcheat);
+        //frame.add(bcheat);
         frame.add(bstr);
-        frame.add(bres);
-        frame.add(bcheat2);
+        //frame.add(bres);
+        //frame.add(bcheat2);
         frame.getContentPane().add(BorderLayout.CENTER,panel);
-        bcheat.setVisible(false);
-        bcheat.setEnabled(false);
-        bcheat2.setVisible(false);
-        bcheat2.setEnabled(false);
+        //bcheat.setVisible(false);
+        //bcheat.setEnabled(false);
+        //bcheat2.setVisible(false);
+        //bcheat2.setEnabled(false);
  
         frame.setVisible(true);
     } 
 
 public void actionPerformed(ActionEvent e){  
     if(e.getSource()==m1){
-        Home();
+        //Home = new Home();
+        frame.setVisible(true);
     }
     if(e.getSource()==m1){
-        Rules();
+        //Rules();
     }
     if(e.getSource()==m1){
-        Start();
+        //Start();
     }
     if(e.getSource()==m1){
-        Reset();
+        //Reset();
     }
 
     if(e.getSource()==b1){  
@@ -231,22 +232,6 @@ public void actionPerformed(ActionEvent e){
             JOptionPane.showMessageDialog(this,"Congratulations! You won.");    
         }    
 }  
-private void Start() {
-
-}
-
-private void Reset() {
-}
-
-private void Rules() {
-    frame=new JFrame();
-    label= new JLabel("hi");
-
-}
-
-private void Home() {
-}
-
 public static void main(String args[]){
         new PuzzleGame();
     }
