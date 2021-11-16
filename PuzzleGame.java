@@ -59,12 +59,22 @@ public class PuzzleGame extends Frame implements ActionListener{
         bstr.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 level m= new level();
-                m.setVisible(true);
+                //m.setVisible(true);
             }
         });
 
+
         JButton brul= new JButton("Rules");
         brul.setBounds(130, 280 ,70, 25);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.getContentPane().add(brul);
+		brul.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				frame.dispose();
+				new rulespage();
+			}
+		});
+
         //bcheat2=new Button("");
         //bcheat2.setBounds(150,200,40,40);
 
