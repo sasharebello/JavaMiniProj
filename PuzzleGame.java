@@ -5,34 +5,13 @@ import java.awt.event.*;
 public class PuzzleGame extends Frame implements ActionListener{
     private JFrame frame;
     private JPanel panel;
-    //private JLabel label;
-    //private JTextField textField;
-    //private JTextArea ta;
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9;//bcheat,bcheat2;
-    //Menu m1,m2;
     PuzzleGame(){
         frame= new JFrame("Puzzle Game");
         frame.setSize(255,400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel=new JPanel();
         panel.setBackground(Color.black);
-        /*JMenuBar mb= new JMenuBar();
-        JMenu m1= new JMenu("Home");
-        m1.addActionListener(this);
-        JMenuItem m11= new JMenu("3");
-        JMenuItem m12= new JMenu("4");
-        JMenuItem m13= new JMenu("5");
-        JMenuItem m14= new JMenu("6");
-        m1.add(m11);
-        m1.add(m12);
-        m1.add(m13);
-        m1.add(m14);
-        JMenu m2= new JMenu("Rules");
-        m2.addActionListener(this);
-        mb.add(m1);
-        mb.add(m2);
-        frame.add(mb);
-        frame.getContentPane().add(BorderLayout.NORTH,mb);*/
         
         b1=new Button("1");
         b1.setBounds(50,100,40,40);
@@ -56,12 +35,11 @@ public class PuzzleGame extends Frame implements ActionListener{
         //bcheat.setBounds(150,200,40,40);
         JButton bstr= new JButton("Start");
         bstr.setBounds(40, 280, 70, 25);
-        bstr.addActionListener(new ActionListener(){
+        /*bstr.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                level m= new level();
                 //m.setVisible(true);
             }
-        });
+        });*/
 
 
         JButton brul= new JButton("Rules");
