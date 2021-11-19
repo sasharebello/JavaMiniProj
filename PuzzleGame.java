@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Collections;
 
 public class PuzzleGame extends Frame implements ActionListener{
     private JFrame frame;
@@ -35,11 +36,11 @@ public class PuzzleGame extends Frame implements ActionListener{
         //bcheat.setBounds(150,200,40,40);
         JButton bstr= new JButton("Start");
         bstr.setBounds(40, 280, 70, 25);
-        /*bstr.addActionListener(new ActionListener(){
+        bstr.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                //m.setVisible(true);
+                //Collections.shuffle();
             }
-        });*/
+        });
 
 
         JButton brul= new JButton("Rules");
@@ -214,7 +215,6 @@ public void actionPerformed(ActionEvent e){
             b9.setLabel("");  
         }  
     } 
-
 
     //congrats code  
     if(b1.getLabel().equals("1")&&b2.getLabel().equals("2")&&b3.getLabel()    
