@@ -5,10 +5,7 @@ import java.awt.*;
 public class level{
     private JFrame frame;
     private JPanel panel;
-    //private JLabel label;
-    //private JTextField textField;
-    //private JTextArea ta;
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9;//bcheat,bcheat2;
+
     level(){
         frame= new JFrame("Puzzle Game");
         frame.setSize(255,400);
