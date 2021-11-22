@@ -126,13 +126,6 @@ public class PuzzleGame extends Frame implements ActionListener {
         frame.getContentPane().add(BorderLayout.CENTER, panel);
         //frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
  
-        JPanel panel = new JPanel(new GridBagLayout());
-        panel.add(label);
-        panel.setOpaque(true); 
-        panel.setBackground(Color.ORANGE);
-        JPanel textPanel = new JPanel(new GridLayout(10, 5)); 
-        textPanel.setBackground(Color.MAGENTA);
-        textPanel.add(new JLabel("congratulations you won"));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
@@ -281,7 +274,8 @@ public class PuzzleGame extends Frame implements ActionListener {
                 && b4.getLabel().equals("4") && b5.getLabel().equals("5") && b6.getLabel().equals("6")
                 && b7.getLabel().equals("7") && b8.getLabel().equals("8") && b9.getLabel().equals("")) {
             //JOptionPane.showMessageDialog(this,"Congratulations! You won.");
-            JOptionPane.showMessageDialog(this, panel, "you won", JOptionPane.DEFAULT_OPTION);
+            //JOptionPane.showMessageDialog(this, panel, "you won", JOptionPane.DEFAULT_OPTION);
+            JOptionPane.showMessageDialog(null, "Congratulations! You Won.", "You Won", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/congrats1.png"));
         }
     }
  
