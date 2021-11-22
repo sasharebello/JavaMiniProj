@@ -3,34 +3,34 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-
+ 
 public class PuzzleGame extends Frame implements ActionListener {
     private JFrame frame;
     private JPanel panel;
-    private JLabel lable;
-    Button b1, b2, b3, b4, b5, b6, b7, b8, b9,select;// bcheat,bcheat2;
+    private JLabel label;
+    Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
     Choice c1,c2,c3;
-
+ 
     PuzzleGame() {
         frame = new JFrame("Puzzle Game");
         frame.setSize(255, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new JPanel();
-        panel.setBackground(Color.lightGray);
+        panel.setBackground(Color.pink);
         String[] buttons = { "1", "2", "3", "4", "5", "6", "7", "8", "" };
-
-        lable = new JLabel("Choose your level:");
-        lable.setBounds(40, 20, 200, 10);
-        frame.add(lable);
-
+ 
+        label = new JLabel("CHOOSE YOUR LEVEL :");
+        label.setBounds(40, 20, 200, 10);
+        frame.add(label);
+ 
         Choice c = new Choice();  
-        c.setBounds(40, 40, 90, 75);    
-        c.add("Easy"); 
-        c.add("Difficult");   
+        c.setBounds(40, 52, 90, 75);    
+        c.add("Easy");
+        c.add("Difficult");  
         frame.getContentPane().add(c);
-        select = new Button("Select");
-        select.setBounds(135, 43, 70, 20);
-        select.addActionListener(new ActionListener() {    
+        JButton bselect = new JButton("Select");
+        bselect.setBackground(Color.white);
+        bselect.setBounds(135, 54, 70, 21);
+        bselect.addActionListener(new ActionListener() {    
             public void actionPerformed(ActionEvent e) {
                 if(c.getItem(c.getSelectedIndex())=="Easy"){
                     frame.dispose();
@@ -41,33 +41,42 @@ public class PuzzleGame extends Frame implements ActionListener {
                     new PuzzleGame1();
                 }
             }    
-        });             
+        });            
         frame.add(c);
-        frame.add(select);
-        
+        frame.add(bselect);
+       
         b1 = new Button(buttons[0]);
         b1.setBounds(50, 100, 40, 40);
+        b1.setBackground(Color.white);
         b2 = new Button(buttons[1]);
         b2.setBounds(100, 100, 40, 40);
+        b2.setBackground(Color.white);
         b3 = new Button(buttons[2]);
         b3.setBounds(150, 100, 40, 40);
+        b3.setBackground(Color.white);
         b4 = new Button(buttons[3]);
         b4.setBounds(50, 150, 40, 40);
+        b4.setBackground(Color.white);
         b5 = new Button(buttons[4]);
         b5.setBounds(100, 150, 40, 40);
+        b5.setBackground(Color.white);
         b6 = new Button(buttons[5]);
         b6.setBounds(150, 150, 40, 40);
+        b6.setBackground(Color.white);
         b7 = new Button(buttons[6]);
         b7.setBounds(50, 200, 40, 40);
+        b7.setBackground(Color.white);
         b8 = new Button(buttons[7]);
         b8.setBounds(100, 200, 40, 40);
+        b8.setBackground(Color.white);
         b9 = new Button(buttons[8]);
         b9.setBounds(150, 200, 40, 40);
-        // bcheat=new Button("");
-        // bcheat.setBounds(150,200,40,40);
-        JButton bstr = new JButton("Start");
-        bstr.setBounds(40, 280, 70, 25);
-        bstr.addActionListener(new ActionListener() {
+        b9.setBackground(Color.white);
+ 
+        JButton bstart = new JButton("Start");
+        bstart.setBounds(40, 280, 70, 25);
+        bstart.setBackground(Color.white);
+        bstart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 shuffleArray(buttons);
                 b1.setLabel(buttons[0]);
@@ -79,23 +88,20 @@ public class PuzzleGame extends Frame implements ActionListener {
                 b7.setLabel(buttons[6]);
                 b8.setLabel(buttons[7]);
                 b9.setLabel(buttons[8]);
-                //Collections.shuffle();
             }
         });
-
-        JButton brul = new JButton("Rules");
-        brul.setBounds(130, 280, 70, 25);
-        frame.getContentPane().add(brul);
-        brul.addActionListener(new ActionListener() {
+ 
+        JButton brules = new JButton("Rules");
+        brules.setBounds(130, 280, 70, 25);
+        brules.setBackground(Color.white);
+        //frame.getContentPane().add(brules);
+        brules.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 frame.dispose();
                 new rulespage();
             }
         });
-
-        // bcheat2=new Button("");
-        // bcheat2.setBounds(150,200,40,40);
-
+ 
         b1.addActionListener(this);
         b2.addActionListener(this);
         b3.addActionListener(this);
@@ -105,7 +111,7 @@ public class PuzzleGame extends Frame implements ActionListener {
         b7.addActionListener(this);
         b8.addActionListener(this);
         b9.addActionListener(this);
-
+ 
         frame.add(b1);
         frame.add(b2);
         frame.add(b3);
@@ -115,21 +121,23 @@ public class PuzzleGame extends Frame implements ActionListener {
         frame.add(b7);
         frame.add(b8);
         frame.add(b9);
-        // frame.add(bcheat);
-        frame.add(bstr);
-        frame.add(brul);
-        // frame.add(bcheat2);
+        frame.add(bstart);
+        frame.add(brules);
         frame.getContentPane().add(BorderLayout.CENTER, panel);
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-
-        // bcheat.setVisible(false);
-        // bcheat.setEnabled(false);
-        // bcheat2.setVisible(false);
-        // bcheat2.setEnabled(false);
-
+        //frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+ 
+        JPanel panel = new JPanel(new GridBagLayout());
+        panel.add(label);
+        panel.setOpaque(true); 
+        panel.setBackground(Color.ORANGE);
+        JPanel textPanel = new JPanel(new GridLayout(10, 5)); 
+        textPanel.setBackground(Color.MAGENTA);
+        textPanel.add(new JLabel("congratulations you won"));
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ 
     }
-
+ 
     static void shuffleArray(String[] ar) {
         // If running on Java 6 or older, use `new Random()` on RHS here
         Random rnd = ThreadLocalRandom.current();
@@ -141,9 +149,9 @@ public class PuzzleGame extends Frame implements ActionListener {
             ar[i] = a;
         }
     }
-
+ 
     public void actionPerformed(ActionEvent e) {
-
+ 
         if (e.getSource() == b1) {
             String label = b1.getLabel();
             if (b2.getLabel().equals("")) {
@@ -267,16 +275,18 @@ public class PuzzleGame extends Frame implements ActionListener {
                 b9.setLabel("");
             }
         }
-
+ 
         // congrats code
         if (b1.getLabel().equals("1") && b2.getLabel().equals("2") && b3.getLabel().equals("3")
                 && b4.getLabel().equals("4") && b5.getLabel().equals("5") && b6.getLabel().equals("6")
                 && b7.getLabel().equals("7") && b8.getLabel().equals("8") && b9.getLabel().equals("")) {
-            JOptionPane.showMessageDialog(this, "Congratulations! You won.");
+            //JOptionPane.showMessageDialog(this,"Congratulations! You won.");
+            JOptionPane.showMessageDialog(this, panel, "you won", JOptionPane.DEFAULT_OPTION);
         }
     }
-
+ 
     public static void main(String args[]) {
         new PuzzleGame();
     }
 }
+
