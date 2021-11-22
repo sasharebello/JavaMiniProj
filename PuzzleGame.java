@@ -273,8 +273,6 @@ public class PuzzleGame extends Frame implements ActionListener {
         if (b1.getLabel().equals("1") && b2.getLabel().equals("2") && b3.getLabel().equals("3")
                 && b4.getLabel().equals("4") && b5.getLabel().equals("5") && b6.getLabel().equals("6")
                 && b7.getLabel().equals("7") && b8.getLabel().equals("8") && b9.getLabel().equals("")) {
-            //JOptionPane.showMessageDialog(this,"Congratulations! You won.");
-            //JOptionPane.showMessageDialog(this, panel, "you won", JOptionPane.DEFAULT_OPTION);
             JOptionPane.showMessageDialog(null, "Congratulations! You Won.", "You Won", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/congrats1.png"));
         }
     }
