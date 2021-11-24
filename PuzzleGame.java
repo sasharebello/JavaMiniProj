@@ -17,19 +17,19 @@ public class PuzzleGame extends Frame implements ActionListener {
         panel = new JPanel();
         panel.setBackground(Color.pink);
         String[] buttons = { "1", "2", "3", "4", "5", "6", "7", "8", "" };
- 
+
+        // levels
         label = new JLabel("CHOOSE YOUR LEVEL :");
         label.setBounds(40, 20, 200, 10);
         frame.add(label);
- 
         Choice c = new Choice();  
         c.setBounds(40, 52, 90, 75);    
         c.add("Easy");
         c.add("Difficult");  
         frame.getContentPane().add(c);
         JButton bselect = new JButton("Select");
-        bselect.setBackground(Color.white);
         bselect.setBounds(135, 54, 70, 21);
+        bselect.setBackground(Color.white);
         bselect.addActionListener(new ActionListener() {    
             public void actionPerformed(ActionEvent e) {
                 if(c.getItem(c.getSelectedIndex())=="Easy"){
@@ -94,7 +94,6 @@ public class PuzzleGame extends Frame implements ActionListener {
         JButton brules = new JButton("Rules");
         brules.setBounds(130, 280, 70, 25);
         brules.setBackground(Color.white);
-        //frame.getContentPane().add(brules);
         brules.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 frame.dispose();
@@ -124,25 +123,24 @@ public class PuzzleGame extends Frame implements ActionListener {
         frame.add(bstart);
         frame.add(brules);
         frame.getContentPane().add(BorderLayout.CENTER, panel);
-        //frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
- 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
     }
- 
+
+    // shuffle code
     static void shuffleArray(String[] ar) {
-        // If running on Java 6 or older, use `new Random()` on RHS here
         Random rnd = ThreadLocalRandom.current();
         for (int i = ar.length - 1; i > 0; i--) {
             int index = rnd.nextInt(i + 1);
-            // Simple swap
+            // simple swap code
             String a = ar[index];
             ar[index] = ar[i];
             ar[i] = a;
         }
     }
- 
+
+    // swap buttons code
     public void actionPerformed(ActionEvent e) {
  
         if (e.getSource() == b1) {

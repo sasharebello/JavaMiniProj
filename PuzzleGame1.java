@@ -8,7 +8,6 @@ public class PuzzleGame1 extends Frame implements ActionListener {
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
- 
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16;
     Choice c1,c2,c3;
  
@@ -19,10 +18,10 @@ public class PuzzleGame1 extends Frame implements ActionListener {
         panel.setBackground(Color.pink);
         String[] buttons = { "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","" };
  
+        // levels
         label = new JLabel("CHOOSE YOUR LEVEL :");
         label.setBounds(40, 20, 200, 10);
         frame.add(label);
- 
         Choice c = new Choice();  
         c.setBounds(40, 40, 90, 75);    
         c.add("Easy");
@@ -123,8 +122,6 @@ public class PuzzleGame1 extends Frame implements ActionListener {
         JButton brules = new JButton("Rules");
         brules.setBounds(130, 330, 70, 25);
         brules.setBackground(Color.white);
-        //frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.getContentPane().add(brules);
         brules.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 frame.dispose();
@@ -176,7 +173,6 @@ public class PuzzleGame1 extends Frame implements ActionListener {
  
     // shuffle code
     static void shuffleArray(String[] ar) {
-        // If running on Java 6 or older, use `new Random()` on RHS here
         Random rnd = ThreadLocalRandom.current();
         for (int i = ar.length - 1; i > 0; i--) {
             int index = rnd.nextInt(i + 1);
@@ -445,7 +441,7 @@ public class PuzzleGame1 extends Frame implements ActionListener {
                 && b10.getLabel().equals("10") && b11.getLabel().equals("11") && b12.getLabel().equals("12")
                 && b13.getLabel().equals("13") && b14.getLabel().equals("14") && b15.getLabel().equals("15")
                 && b16.getLabel().equals("") ) {
-            JOptionPane.showMessageDialog(this, "Congratulations! You won.");
+            JOptionPane.showMessageDialog(null, "Congratulations! You Won.", "You Won", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/congrats1.png"));
         }
     }
  

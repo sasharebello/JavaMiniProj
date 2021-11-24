@@ -21,7 +21,7 @@ public class rulespage{
         "\n- Click \"start game\" to begin the game."+
         "\n- Click on the box or number that you want to move to the blank spot."+ 
         "\n- This is how you move the numbers around to arrange them into order. "+
-        "\n- Once you have all the numbers in order, you have solved the puzzle and won You Win!!!"); 
+        "\n- Once you have all the numbers in order, you have solved the puzzle and won the game!"); 
         area.setBackground(Color.pink); 
         Font f = new Font( "Roman", Font.ITALIC, 12 );         
         area.setFont(f);
