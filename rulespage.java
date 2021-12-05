@@ -36,7 +36,7 @@ public class rulespage{
 		play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				frame.dispose();
-				new PuzzleGame();
+				new Easy();
 			}
 		});
 

@@ -4,14 +4,14 @@ import java.awt.event.*;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
  
-public class PuzzleGame1 extends Frame implements ActionListener {
+public class Difficult extends Frame implements ActionListener {
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16;
     Choice c1,c2,c3;
  
-    PuzzleGame1() {
+    Difficult() {
         frame = new JFrame("Puzzle Game");
         frame.setSize(255, 450);
         panel = new JPanel();
@@ -34,11 +34,11 @@ public class PuzzleGame1 extends Frame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 if(c.getItem(c.getSelectedIndex())=="Easy"){
                     frame.dispose();
-                    new PuzzleGame();
+                    new Easy();
                 }
                 if(c.getItem(c.getSelectedIndex())=="Difficult") {
                     frame.dispose();
-                    new PuzzleGame1();
+                    new Difficult();
                 }
             }    
         });            
@@ -446,7 +446,7 @@ public class PuzzleGame1 extends Frame implements ActionListener {
     }
  
     public static void main(String args[]) {
-        new PuzzleGame1();
+        new Difficult();
     }
 }
  
